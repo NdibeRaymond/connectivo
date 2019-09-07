@@ -1,0 +1,12 @@
+#ignore the migration folder
+migrations/
+
+#ignore the pycache folder
+__pycache__/
+
+logs
+
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
