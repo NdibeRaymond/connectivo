@@ -1,0 +1,17 @@
+{%extends 'header_footer.html'%}
+
+
+{%block body%}
+<div class="container">
+  <form class="" action="{% url 'fortnox:post_article' %}" method="POST">
+      <p class="text-muted">Create new article here</p>
+      {%csrf_token%}
+      <div class="form-group">
+        <label for="description">Article Description*</label>
+        <textarea class="form-control" name="description" id="description" rows="2" cols="20" required></textarea>
+      </div>
+        <button type="submit" class="btn btn-success">Create Article</button>
+  </form>  
+</div>
+
+{%endblock%}

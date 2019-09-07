@@ -1,0 +1,49 @@
+{%extends "base.html" %}
+
+{%block title%}
+<title>Home</title>
+{%endblock%}
+
+{%block header_footer%}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light text-white">
+  <div class="container">
+    <a class="navbar-brand font-weight-bolder" href="/">FortNoxClient <sup>ALPHA</sup></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropleft">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Articles</a>
+        <div class="dropdown-menu dropdown-menu-left">
+          <a class="dropdown-item" href="{%url 'fortnox:all_articles' page=1 %}">View Articles</a>
+          <a class="dropdown-item" href="{%url 'fortnox:post_article' %}">Post Article</a>
+          <a class="dropdown-item" href="{%url 'fortnox:update_article' %}">Update Article</a>
+        </div>
+      </li>
+      <li class="nav-item dropleft">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Invoices</a>
+      <div class="dropdown-menu dropdown-menu-left">
+        <a class="dropdown-item" href="{%url 'fortnox:all_invoices' page=1 %}">View Invoices</a>
+        <a class="dropdown-item" href="{%url 'fortnox:create_invoice' %}">Create Invoice</a>
+        <a class="dropdown-item" href="{%url 'fortnox:bookkeep_invoice' %}">Bookkeep Invoice</a>
+        <a class="dropdown-item" href="{%url 'fortnox:last_synced' %}">View Last Synced Invoice</a>
+      </div>
+    </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% include 'includes/_messages.html' %}<!-- This handles push messages that the backend might somethings need to push to the frontend Example an article post success message -->
+{%block body%}
+
+{%endblock%}
+
+
+
+{%endblock%}

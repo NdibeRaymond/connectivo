@@ -1,0 +1,25 @@
+{%extends 'header_footer.html'%}
+
+
+{%block body%}
+<div class="container">
+  <form class="" action="{% url 'fortnox:update_article' %}" method="POST">
+      <p class="text-muted">update an existing article here</p>
+      {%csrf_token%}
+      <div class="form-group">
+        <label for="article_number">Article Number*</label>
+        {%if article_number != None %}
+        <input class="form-control" id="article_number" type="text" name="article_number" value="{{article_number}}" required>
+        {%else%}
+        <input class="form-control" id="article_number" type="text" name="article_number" value="" required>
+        {%endif%}
+      </div>
+      <div class="form-group">
+        <label for="description">Article Description*</label>
+        <textarea class="form-control" name="description" id="description" rows="2" cols="20" required></textarea>
+      </div>
+        <button type="submit" class="btn btn-success">Update Article</button>
+  </form>
+</div>
+
+{%endblock%}

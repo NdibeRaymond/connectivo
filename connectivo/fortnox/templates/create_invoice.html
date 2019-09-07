@@ -1,0 +1,50 @@
+{%extends 'header_footer.html'%}
+
+
+{%block body%}
+<div class="container">
+  <form class="" action="{% url 'fortnox:create_invoice' %}" method="POST">
+      <p class="text-muted">create an invoice here</p>
+      {%csrf_token%}
+      <div class="form-group">
+        <label for="article_number">Article Number*</label>
+        <input class="form-control" id="article_number" type="text" name="article_number" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="customer_number">Customer Number*</label>
+        <input class="form-control" id="customer_number" type="text" name="customer_number" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="article_number">Unit*</label>
+        <input class="form-control" id="unit" type="text" name="unit" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="currency">Currency*</label>
+        <input class="form-control" id="currency" type="text" name="currency" value="" required>
+        <small id="currency" class="form-text text-muted">you are adviced to use SEK. other currencies might not be supported</small>
+      </div>
+      <div class="form-group">
+        <label for="price">Price*</label>
+        <input class="form-control" id="price" type="text" name="price" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="discount">Discount*</label>
+        <input class="form-control" id="discount" type="text" name="discount" value="">
+      </div>
+      <div class="form-group">
+        <label for="due_date">Due Date*</label>
+        <input class="form-control" id="due_date" type="text" name="due_date" value="" required>
+        <small id="due_date" class="form-text text-muted">example: 2019-05-09</small>
+      </div>
+      <div class="form-group">
+        <label for="invoice_date">Invoice Date*</label>
+        <input class="form-control" id="invoice_date" type="text" name="invoice_date" value="" >
+        <small id="invoice_date" class="form-text text-muted">example: 2019-05-09</small>
+      </div>
+
+
+        <button type="submit" class="btn btn-success">Create Invoice</button>
+  </form>
+</div>
+
+{%endblock%}

@@ -1,0 +1,32 @@
+{%extends 'header_footer.html'%}
+
+
+{%block body%}
+<div class="container">
+  <br>
+  <br>
+  {%if invoice != None %}
+  <table class="table table-striped">
+    <tr>
+      <th colspan="3" class="text-center font-size"><h4>Invoice Details</h4></th>
+    </tr>
+    <tr>
+      <th>S/N</th>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+    {%for field,value in invoice.items %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{field}}</td>
+      <td>{{value}}</td>
+    </tr>
+    {%endfor%}
+  </table>
+  {%else%}
+  <h2>You have not Synced your Account</h2>
+  {%endif%}
+
+</div>
+
+{%endblock%}

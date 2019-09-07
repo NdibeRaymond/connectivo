@@ -1,0 +1,19 @@
+{%extends 'header_footer.html'%}
+
+
+{%block body%}
+<div class="container">
+  <form class="" action="{% url 'fortnox:bookkeep_invoice' %}" method="POST">
+      <p class="text-muted">Bookkeep your invoice here</p>
+      {%csrf_token%}
+      <div class="form-group">
+        <label for="document_number">Invoice Number*</label>
+        <input class="form-control" id="document_number" type="text" name="document_number" value="" required>
+        <small id="document_number" class="form-text text-muted">Ensure that this invoice exists</small>
+
+      </div>
+        <button type="submit" class="btn btn-success">Bookkeep Invoice</button>
+  </form>
+</div>
+
+{%endblock%}

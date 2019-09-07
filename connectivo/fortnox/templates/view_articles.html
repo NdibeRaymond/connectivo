@@ -1,0 +1,48 @@
+{%extends 'header_footer.html' %}
+
+
+{%block body%}
+
+<div class="container">
+
+  <div class="float-right p-3">
+    {%for page in pages%}
+    <a href="{%url 'fortnox:all_articles' page=page %}" class="btn btn-sm btn-primary">{{page}}</a>
+    {%endfor%}
+  </div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Article Number</th>
+      <th>Description</th>
+      <th>House Work</th>
+      <th>Purchase Price</th>
+      <th>Sales Price</th>
+      <th>Quantity</th>
+      <th>Vat</th>
+      <th>Action</th>
+    </tr>
+
+    {%for article in articles %}
+    <tr>
+      <td>{{article.ArticleNumber}}</td>
+      <td>{{article.Description}}</td>
+      <td>{{article.HouseWork}}</td>
+      <td>{{article.PurchasePrice}}</td>
+      <td>{{article.SalesPrice}}</td>
+      <td>{{article.Quantity}}</td>
+      <td>{{article.Vat}}</td>
+      <td><a href="{%url 'fortnox:quick_update_article' article_number=article.ArticleNumber %}" class="btn btn-success btn-sm">Update</a></td>
+    </tr>
+    {%endfor%}
+  </table>
+
+  <div class="float-right p-3">
+    {%for page in pages%}
+    <a href="{%url 'fortnox:all_articles' page=page %}" class="btn btn-sm btn-primary">{{page}}</a>
+    {%endfor%}
+  </div>
+
+</div>
+
+{%endblock%}

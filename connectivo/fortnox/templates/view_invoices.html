@@ -1,0 +1,50 @@
+{%extends 'header_footer.html' %}
+
+
+{%block body%}
+
+
+<div class="container">
+
+  <div class="float-right p-3">
+    {%for page in pages%}
+    <a href="{%url 'fortnox:all_invoices' page=page %}" class="btn btn-lg btn-primary">{{page}}</a>
+    {%endfor%}
+  </div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Document Number</th>
+      <th>Customer Name</th>
+      <th>Customer Number</th>
+      <th>Currency</th>
+      <th>Due Date</th>
+      <th>Invoice Date</th>
+      <th>Booked</th>
+      <th>Action</th>
+    </tr>
+
+    {%for invoice in invoices %}
+    <tr>
+      <td>{{invoice.DocumentNumber}}</td>
+      <td>{{invoice.CustomerName}}</td>
+      <td>{{invoice.CustomerNumber}}</td>
+      <td>{{invoice.Currency}}</td>
+      <td>{{invoice.DueDate}}</td>
+      <td>{{invoice.InvoiceDate}}</td>
+      <td>{{invoice.Booked}}</td>
+      <td><a href="{%url 'fortnox:quick_bookkeep' document_number=invoice.DocumentNumber %}" class="btn btn-success btn-sm">Bookkeep</a></td>
+    </tr>
+    {%endfor%}
+  </table>
+
+  <div class="float-right p-3">
+    {%for page in pages%}
+    <a href="{%url 'fortnox:all_invoices' page=page %}" class="btn btn-lg btn-primary">{{page}}</a>
+    {%endfor%}
+  </div>
+
+</div>
+
+
+{%endblock%}
