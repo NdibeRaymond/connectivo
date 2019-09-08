@@ -11,4 +11,4 @@ this web app is an attempt to build a fortnox client
 * run `python manage.py makemigrations fortnox` and `python manage.py migrate` to handle the required db migrations
 * run `python manage.py runserver` to start the server
 
-*please do not mind the size of the requirements.txt. most modules there are unneccessary but are left as a precautionary step incase other modules depend on them
+*please do not mind the size of the requirements.txt. most modules there are unneccessary but are left as a precautionary step incase other modules depend on them*
